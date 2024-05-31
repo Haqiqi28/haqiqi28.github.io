@@ -1,0 +1,439 @@
+@font-face {
+  font-family: LEMONMILK;
+  src: url(font/LEMONMILK-Regular.otf);
+}
+@font-face {
+  font-family: LEMONMILKMEDIUM;
+  src: url(font/LEMONMILK-Medium.otf);
+}
+@font-face {
+  font-family: Anatasha;
+  src: url(font/AnatashaTrial.otf);
+}
+:root {
+  --primary-color: #f6ecab;
+  --primary-color-dark: #aba78f;
+  --secondary-color: #ff8e8f;
+  --text-dark: #213465;
+  --text-medium: #c3c3c3;
+  --text-light: #ffffff;
+  --bg-color: #5ab2ff;
+  --color-dark: #3b5cb0;
+  --max-widht: 1200px;
+  --h1-font: 5rem;
+  --p-font: 10px;
+  --h6-font: 15px;
+  --h4-font: 20px;
+}
+body {
+  font-family: "LEMONMILK", sans-serif; /* Gunakan font pada elemen body atau sesuai kebutuhan */
+  background-color: var(--color-dark);
+}
+
+/* navbar */
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 15px 20px;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-dark); /* Change text color on hover */
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0;
+  background: var(--color-dark); /* Color of the underline */
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Additional styling for better visual */
+.navbar {
+  background-color: var(--text-light); /* Background color of the navbar */
+  height: 50px;
+
+  padding: 0.3rem;
+}
+.navbar-brand span {
+  font-size: 30px;
+  color: var(--color-dark);
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #000; /* Text color */
+}
+/* navbar end */
+
+/* jumbotron */
+section {
+  padding: 0px 13% 0px;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.hero-image img {
+  max-width: 700px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.hero-text h1 {
+  color: var(--text-light);
+  font-size: var(--h1-font);
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: -1px -1px 0px #000, 7px 7px 0px #000, 9px 9px 0px #0000055;
+}
+.hero-text h1 span {
+  color: var(--primary-color);
+}
+.hero-text h6 {
+  font-size: var(--h6-font);
+  font-weight: 600;
+  color: var(--text-light);
+}
+.hero-text h6 span {
+  color: var(--primary-color);
+}
+.hero-text h4 {
+  font-family: "Anatasha", sans-serif;
+  color: var(--text-light);
+  font-size: var(--h4-font);
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.hero-text h4 span {
+  font-family: "LEMONMILK", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.hero-text p {
+  font-size: var(--p-font);
+  color: var(--text-medium);
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.hero-icons i {
+  display: inline-block;
+  font-size: 24px;
+  color: var(--text-light);
+  padding: 20px;
+  transition: all 0.6s ease;
+  margin-bottom: 40px;
+}
+.hero-icons i:hover {
+  transform: rotate3d(0, 0, 1, 360deg);
+  color: var(--primary-color);
+}
+.hero-btn {
+  display: flex;
+  align-items: center;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: var(--primary-color);
+  color: var(--color-dark);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 30px;
+  transition: al 0.6s ease;
+}
+.btn:hover {
+  background: var(--text-light);
+  color: var(--color-dark);
+}
+@media (max-width: 1800px) {
+  section {
+    padding: 40px 6% 50px;
+  }
+}
+@media (max-width: 1300px) {
+  :root {
+    --h1-font: 4.2rem;
+    --p-font: 1 rem;
+  }
+  .hero-image img {
+    max-width: 640px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+@media (max-width: 740px) {
+  section {
+    padding: 40px 4% 50px;
+  }
+  :root {
+    --h1-root: 4rem;
+  }
+  .hero-image img {
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    height: auto;
+  }
+  .hero-text {
+    text-align: center;
+    order: 2;
+    width: 100%;
+  }
+  .hero-text p {
+    width: 100%;
+  }
+  .hero-image {
+    margin: auto;
+  }
+  .hero-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* resume */
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-body .d-flex {
+  margin-bottom: 1rem; /* Menambah ruang di bawah ikon dan judul kartu */
+}
+
+.card-title {
+  margin: 0; /* Menghapus margin default dari h3 */
+}
+
+.card-body h5,
+.card-body h6,
+.card-body p {
+  margin: 0.5rem 0; /* Menambahkan margin untuk elemen lainnya agar tidak terlalu rapat */
+}
+
+.card-title.text-center {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.custom-card {
+  background-color: var(--color-dark);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 5px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  margin-top: 20px;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.custom-card .card-title {
+  color: var(--primary-color); /* Warna teks judul card */
+  font-size: 1.25rem;
+}
+
+.custom-card h5 {
+  font-size: var(--h4-font);
+  color: var(--primary-color);
+}
+
+.custom-card h6 {
+  font-size: var(--h6-font);
+  color: var(--primary-color);
+}
+
+.custom-card p {
+  color: var(--primary-color-dark); /* Warna teks lainnya di dalam card */
+  font-size: 12px;
+}
+
+.custom-card .card-body {
+  padding: 10px; /* Menambah padding di dalam card */
+}
+
+.custom-card .d-flex {
+  margin-bottom: 1rem; /* Menambah margin di bawah ikon dan judul card */
+}
+
+.custom-card i {
+  font-size: 2rem; /* Mengatur ukuran ikon */
+  color: var(--secondary-color); /* Warna ikon */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-subtitle {
+  font-weight: bold;
+}
+
+.card-text span {
+  font-weight: bold;
+}
+
+.img-skill img {
+  width: 100px; /* Ubah ukuran gambar sesuai kebutuhan */
+  height: 100px; /* Ubah ukuran gambar sesuai kebutuhan */
+}
+@media (max-width: 767px) {
+  .img-skill .col {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .img-skill .col:nth-child(5) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-btn {
+  /* Gaya tambahan Anda di sini */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-right: 0%;
+}
+
+.custom-btn:hover {
+  background-color: #007bff; /* Ubah warna latar belakang saat hover */
+  color: #fff; /* Ubah warna teks saat hover */
+}
+
+.design img {
+  margin-top: 20px;
+  max-width: 100%; /* Maksimumkan lebar gambar */
+  height: auto; /* Biarkan tinggi gambar menyesuaikan proporsi aslinya */
+}
+
+/* Gaya untuk media query ketika lebar layar <= 767px */
+@media (max-width: 767px) {
+  .design img {
+    max-width: 100%; /* Maksimumkan lebar gambar */
+  }
+
+  .col-6.col-md-4 {
+    width: 50%; /* Setiap kolom memenuhi 50% lebar di perangkat seluler */
+    margin-bottom: 20px; /* Berikan jarak antara kolom-kolom */
+  }
+  .design .row {
+    justify-content: center; /* Posisikan baris dengan gambar di tengah */
+  }
+}
+
+/* Gaya umum */
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-container .col-6 {
+  flex: 1 1 45%; /* Menyesuaikan kolom agar dua video di satu baris */
+  max-width: 45%; /* Menetapkan lebar maksimum kolom */
+  display: flex;
+  justify-content: center;
+}
+
+.video-container video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Memusatkan video secara horizontal */
+}
+
+/* Gaya untuk media query ketika lebar layar <= 767px */
+@media (max-width: 767px) {
+  .video-container .col-6 {
+    flex: 1 1 100%; /* Buat kolom penuh pada perangkat kecil */
+    max-width: 100%; /* Menetapkan lebar maksimum kolom */
+  }
+}
+
+.projects-title h6 {
+  font-size: 1.5rem; /* Ubah ukuran font */
+  color: var(--color-dark); /* Ubah warna teks */
+  background-color: var(--primary-color); /* Ubah warna latar belakang */
+  padding: 10px 20px; /* Tambahkan padding */
+  border-radius: 5px; /* Tambahkan border radius */
+  display: inline-block; /* Buat elemen sebagai blok inline */
+  margin-top: 20px; /* Tambahkan margin atas */
+  text-transform: uppercase; /* Ubah teks menjadi huruf besar */
+  letter-spacing: 1px; /* Tambahkan spasi antar huruf */
+}
+
+.projects h1 {
+  font-size: 2.5rem; /* Ubah ukuran font */
+  color: var(--primary-color); /* Ubah warna teks */
+  margin-bottom: 20px; /* Tambahkan margin bawah */
+  text-transform: uppercase; /* Ubah teks menjadi huruf besar */
+  letter-spacing: 2px; /* Tambahkan spasi antar huruf */
+}
+
+.projects h6 {
+  font-size: 1.5rem; /* Ubah ukuran font */
+  color: var(--color-dark); /* Ubah warna teks */
+  background-color: var(--primary-color); /* Ubah warna latar belakang */
+  padding: 10px 20px; /* Tambahkan padding */
+  border-radius: 5px; /* Tambahkan border radius */
+  display: inline-block; /* Buat elemen sebagai blok inline */
+  margin-top: 20px; /* Tambahkan margin atas */
+  text-transform: uppercase; /* Ubah teks menjadi huruf besar */
+  letter-spacing: 1px; /* Tambahkan spasi antar huruf */
+}
